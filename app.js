@@ -5,9 +5,11 @@ import express from "express"
 import swaggerJsDoc from "swagger-jsdoc"
 import swaggerUi from "swagger-ui-express"
 import whatsappRoutes from "./routes/whatsappRoutes.js"
+import verifyApiKey from "./middlewares/verfityToken.js"
 
 const app = express()
 const PORT = process.env.PORT || 3000
+const API_KEY = process.env.WHATSAPP_API_KEY  
 
 // Swagger configuration
 const swaggerOptions = {
@@ -83,10 +85,10 @@ app.use((req, res, next) => {
 })
 
 // API routes
-app.use("/api/whatsapp", whatsappRoutes)
+app.use("/api/whatsapp", verifyApiKey, whatsappRoutes)
 
 // Send message API (POST)
-app.post("/send", async (req, res) => {
+app.post("/send", verifyApiKey, async (req, res) => {
     try {
         const { number, message } = req.body
 
