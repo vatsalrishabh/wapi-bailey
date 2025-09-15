@@ -36,7 +36,7 @@ jobs:
           source: "."
           target: "/home/wapi"
 
-      - name: Restart PM2 app
+      - name: Restart PM2 appp
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.VPS_HOST }}
