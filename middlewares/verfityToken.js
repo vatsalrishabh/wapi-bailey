@@ -1,5 +1,5 @@
 // middlewares/verifyToken.js
-require("dotenv").config()
+import 'dotenv/config'; 
 
 const API_KEY = process.env.WHATSAPP_API_KEY
 
@@ -12,4 +12,4 @@ const verifyApiKey = (req, res, next) => {
     next()
 }
 
-module.exports = verifyApiKey
+export default verifyApiKey;
