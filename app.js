@@ -6,7 +6,7 @@ import swaggerJsDoc from "swagger-jsdoc"
 import swaggerUi from "swagger-ui-express"
 import whatsappRoutes from "./routes/whatsappRoutes.js"
 import verifyApiKey from "./middlewares/verfityToken.js"
-
+//jj
 const app = express()
 const PORT = process.env.PORT || 3000
 const API_KEY = process.env.WHATSAPP_API_KEY  
